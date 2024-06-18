@@ -1,0 +1,35 @@
+﻿@model SchoolGradingSystem.Models.EntityFramework.Students
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateStudent", "Students", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.StudentName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Surname</label>
+        @Html.TextBoxFor(m => m.StudentSurname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Sex</label>
+        @Html.TextBoxFor(m => m.StudentSex, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label>Club</label>
+        @Html.DropDownListFor(i => i.Clubs.ClubID, (List<SelectListItem>)ViewBag.studentClubs, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Photo URL</label>
+        @Html.TextBoxFor(m => m.StudentPhoto, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.StudentID)
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Update</button>
+    </div>
+}

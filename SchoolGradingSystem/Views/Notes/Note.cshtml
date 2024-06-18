@@ -1,0 +1,42 @@
+﻿@using SchoolGradingSystem.Models.EntityFramework
+@model List<Notes>
+@{
+    ViewBag.Title = "Note";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Lesson</th>
+        <th>Student</th>
+        <th>Exam1</th>
+        <th>Exam2</th>
+        <th>exam3</th>
+        <th>Project</th>
+        <th>Average</th>
+        <th>status</th>
+        <th>Operations</th>
+
+    </tr>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.NoteID</td>
+                <td>@note.Lessons.LessonName</td>
+                <td>@note.Students.StudentName</td>
+                <td>@note.Exam1</td>
+                <td>@note.Exam2</td>
+                <td>@note.Exam3</td>
+                <td>@note.Project</td>
+                <td>@note.Average</td>
+                <td>@note.Statu</td>
+                <td><a href="/Notes/Update/@note.NoteID" class="btn btn-success">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Notes/AddNote" class="btn btn-primary">New Exam Entry</a>
+

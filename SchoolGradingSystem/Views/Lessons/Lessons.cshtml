@@ -1,0 +1,30 @@
+﻿@using SchoolGradingSystem.Models.EntityFramework
+@model List<Lessons>
+@{
+    ViewBag.Title = "Lessons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th style="width: 15%">Lesson ID</th>
+        <th style="width: 40%">Lesson Name</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var lesson in Model)
+        {
+            <tr>
+                <td>@lesson.LessonID</td>
+                <td>@lesson.LessonName</td>
+                <td>
+                    <a href="/Lessons/Remove/@lesson.LessonID" class="btn btn-danger">Remove</a>
+                    <a href="/Lessons/Update/@lesson.LessonID" class="btn btn-success">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Lessons/AddLesson" class="btn btn-primary">Add Lesson</a>
+

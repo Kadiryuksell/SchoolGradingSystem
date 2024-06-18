@@ -1,0 +1,52 @@
+﻿@model SchoolGradingSystem.Models.EntityFramework.Notes
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Notes", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Lesson</label>
+        @Html.TextBoxFor(m => m.Lessons.LessonName, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label>Student </label>
+        @Html.TextBoxFor(m => m.Students.StudentID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Exam 1</label>
+        @Html.TextBoxFor(m => m.Exam1, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Exam 2</label>
+        @Html.TextBoxFor(m => m.Exam2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Exam 3</label>
+        @Html.TextBoxFor(m => m.Exam3, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Project</label>
+        @Html.TextBoxFor(m => m.Project, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Average</label>
+        @Html.TextBoxFor(m => m.Average, new {@Value= ViewBag.avg, @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Statu</label>
+        @Html.TextBoxFor(m => m.Statu, new {@Value = @ViewBag.avgPass, @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.NoteID)
+
+    <span style="margin-top:10px">
+        <button type="submit" name="SelectOperation" value="Calculate" class="btn btn-success">Calculate</button>
+    </span>
+    <span style="margin-top:10px; margin-left: 10px">
+        <button class="btn btn-primary">Update</button>
+    </span>
+}

@@ -1,0 +1,28 @@
+﻿@model SchoolGradingSystem.Models.EntityFramework.Clubs
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateClubs", "Clubs", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Club Name</label>
+        @Html.TextBoxFor(m => m.ClubName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Club Limit</label>
+        @Html.TextBoxFor(m => m.ClubLimit, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.ClubID)
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Update</button>
+    </div>
+}
+
+
+

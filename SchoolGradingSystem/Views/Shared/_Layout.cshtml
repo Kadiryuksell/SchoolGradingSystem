@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/WebDesign/SchoolStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>
+                    Student Grading System
+                </h3>
+                <strong>BS</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li>
+                    <a href="/Students/Student">
+                        <i class="glyphicon glyphicon-list"></i>
+                        Student List
+                    </a>
+
+                </li>
+                <li>
+                    <a href="/Lessons/Lessons">
+                        <i class="glyphicon glyphicon-star"></i>
+                        Lessons
+                    </a>
+                </li>
+                <li>
+                    <a href="/Clubs/Clubs">
+                        <i class="glyphicon glyphicon-book"></i>
+                        Clubs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Notes/Note">
+                        <i class="glyphicon glyphicon-dashboard"></i>
+                        Exam Notices
+                    </a>
+                </li>
+               
+            </ul>  
+        </nav>
+
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

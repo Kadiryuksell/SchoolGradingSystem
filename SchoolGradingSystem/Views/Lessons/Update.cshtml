@@ -1,0 +1,20 @@
+﻿@model SchoolGradingSystem.Models.EntityFramework.Lessons
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("UpdateLesson", "Lessons", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Lesson Name</label>
+        @Html.TextBoxFor(m => m.LessonName, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.LessonID)
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Update</button>
+    </div>
+    }
+
+
+

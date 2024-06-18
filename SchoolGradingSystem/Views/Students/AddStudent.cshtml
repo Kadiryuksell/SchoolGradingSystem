@@ -1,0 +1,44 @@
+﻿@model SchoolGradingSystem.Models.EntityFramework.Students
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <form method="post" class="form-group">
+        <div>
+            <label>Name</label>
+            <input type="text" class="form-control" name="StudentName" />
+        </div>
+
+        <div>
+            <label>Surname</label>
+            <input type="text" class="form-control" name="StudentSurname" />
+        </div>
+
+        <div>
+            <label>Photo</label>
+            <input type="text" class="form-control" name="StudentPhoto" />
+        </div>
+
+        <div>
+            <label>Sex</label> <br />
+            <input type="radio" name="StudentSex" value="Male" />
+            <label for="Male">Male</label> <br />
+            <input type="radio" name="StudentSex" value="Female" />
+            <label for="Female">Female</label>
+
+        </div>
+
+        <div>
+            <label>Club</label>
+            @Html.DropDownListFor(i => i.Clubs.ClubID, (List<SelectListItem>)ViewBag.studentClubs, new { @class = "form-control" })
+        </div>
+
+        <div style="margin-top: 10px">
+            <button class="btn btn-primary">Add Student</button>
+        </div>
+    </form>
+
+</div>
+

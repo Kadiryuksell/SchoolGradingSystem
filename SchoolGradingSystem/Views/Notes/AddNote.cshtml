@@ -1,0 +1,51 @@
+﻿@model SchoolGradingSystem.Models.EntityFramework.Notes
+@{
+    ViewBag.Title = "AddNote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+        <form method="post" class="form-group">
+            <div>
+                <label>Lesson</label>
+                <input type="text" class="form-control" name="lessonID" />
+            </div>
+
+            <div>
+                <label>Student</label>
+                <input type="text" class="form-control" name="StudentID" />
+            </div>
+
+            <div>
+                <label>Exam1</label>
+                <input type="text" class="form-control" name="Exam1" />
+            </div>
+            <div>
+                <label>Exam2</label>
+                <input type="text" class="form-control" name="Exam2" />
+            </div>
+            <div>
+                <label>exam3</label>
+                <input type="text" class="form-control" name="exam3" />
+            </div>
+            <div>
+                <label>Project</label>
+                <input type="text" class="form-control" name="Project" />
+            </div>
+            <div>
+                <label>Average</label>
+                <input type="text" class="form-control" name="Average" disabled />
+            </div>
+
+            <div>
+                <label>Statu</label>
+                <input type="text"  class="form-control" name="Statu" disabled/>
+            </div>
+
+            <div style="margin-top: 10px">
+                    <button class="btn btn-primary">Add New Note</button>
+            </div>
+        </form>
+
+    </div>
+

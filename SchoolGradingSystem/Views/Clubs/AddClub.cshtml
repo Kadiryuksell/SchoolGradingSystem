@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "AddClub";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Club Name  </label>
+        <input type="text" class="form-control" name="ClubName" />
+        <label>Club Limit </label> <i>Limit cannot be less than 10 and cannot exceed 100</i>
+        <input type="text" class="form-control" name="ClubLimit" />
+    </div>
+    <div style="margin-top: 10px">
+        <button class="btn btn-info">Add Club</button>
+    </div>
+</form>
+
